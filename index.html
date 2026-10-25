@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaNo Commerce GbR – 33vault &amp; thunder_sales</title>
+  <meta name="description" content="PaNo Commerce GbR aus Bayreuth betreibt die Marken 33vault (kuratierte Second-Hand-Mode) und thunder_sales (eBay). Kontakt, Impressum und Datenschutz.">
+  <meta property="og:title" content="PaNo Commerce GbR">
+  <meta property="og:description" content="Die Firma hinter 33vault und thunder_sales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pano-commerce.com/">
+  <link rel="canonical" href="https://pano-commerce.com/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='17' font-weight='700' fill='%23fff'%3EPN%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #000;
+      --paper: #fff;
+      --muted: rgba(0, 0, 0, .56);
+      --line: rgba(0, 0, 0, .14);
+      --accent: #4a0000;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 16px/1.55 var(--font);
+    }
+    a { color: inherit; }
+    .wrap { width: min(1040px, 100% - 32px); margin: 0 auto; }
+
+    /* Kopf */
+    .top {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px; color: var(--muted);
+    }
+    .top strong { color: var(--ink); font-weight: 500; }
+    .top nav a { margin-left: 18px; text-decoration: none; }
+    .top nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Intro */
+    .intro { padding: clamp(56px, 10vw, 120px) 0 clamp(40px, 6vw, 72px); }
+    .intro h1 {
+      margin: 0;
+      max-width: 18ch;
+      font-size: clamp(34px, 6vw, 68px);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      text-wrap: balance;
+    }
+    .intro p {
+      max-width: 52ch;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.6vw, 19px);
+      text-wrap: pretty;
+    }
+
+    /* Marken */
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+    .brand {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+      min-height: 300px;
+      padding: 26px 26px 24px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      text-decoration: none;
+      transition: background-color .5s cubic-bezier(.22, 1, .36, 1), color .5s cubic-bezier(.22, 1, .36, 1);
+    }
+    .brand:hover, .brand:focus-visible { background: var(--ink); color: var(--paper); }
+    .brand small { font-size: 13px; color: var(--muted); }
+    .brand:hover small, .brand:focus-visible small { color: rgba(255, 255, 255, .62); }
+    .brand h2 {
+      align-self: start;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 500;
+      line-height: .95;
+      letter-spacing: -0.04em;
+      word-break: break-word;
+    }
+    .brand p { margin: 0; max-width: 36ch; font-size: 15px; text-wrap: pretty; }
+    .brand .go { display: block; margin-top: 10px; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Kontakt */
+    .contact { padding: clamp(40px, 6vw, 72px) 0; font-size: 15px; }
+    .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 28px; margin: 0; }
+    .contact dt { color: var(--muted); }
+    .contact dd { margin: 0; }
+
+    /* Rechtliches */
+    .legal { padding: 48px 0 64px; border-top: 1px solid var(--line); }
+    .legal h2 { margin: 0 0 18px; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
+    .legal h3 { margin: 28px 0 8px; font-size: 15px; font-weight: 500; }
+    .legal p, .legal li { max-width: 68ch; margin: 0 0 10px; font-size: 15px; color: rgba(0, 0, 0, .78); }
+    .legal address { font-style: normal; }
+    .legal + .legal { border-top: 1px solid var(--line); }
+
+    footer { padding: 18px 0 40px; font-size: 13px; color: var(--muted); }
+    footer a { text-decoration: none; margin-right: 18px; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { .brand { transition: none; } }
+    @media (max-width: 600px) {
+      .top { flex-direction: column; gap: 8px; }
+      .top nav a { margin: 0 18px 0 0; }
+      .contact dl { grid-template-columns: 1fr; gap: 2px; }
+      .contact dt { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div><strong>PaNo Commerce GbR</strong> &nbsp;Bayreuth</div>
+      <nav aria-label="Seite">
+        <a href="#marken">Marken</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
+      </nav>
+    </header>
+
+    <section class="intro">
+      <h1>Die Firma hinter 33vault und thunder_sales.</h1>
+      <p>PaNo Commerce ist ein Onlinehandel aus Bayreuth. Wir verkaufen über zwei Marken: 33vault für kuratierte Second-Hand-Mode in limitierten Drops und thunder_sales auf eBay für Sammelkarten, Spielzeug, Technik, Kleidung und Schuhe.</p>
+    </section>
+
+    <section id="marken" class="brands" aria-label="Unsere Marken">
+      <a class="brand" href="https://33vault.com" rel="noopener">
+        <small>Eigener Onlineshop</small>
+        <h2>33vault</h2>
+        <div>
+          <p>Kuratierte Second-Hand-Mode, veröffentlicht in Drops. Zwischen den Drops ist der Shop geschlossen – wer sich einträgt, erfährt als Erstes vom nächsten.</p>
+          <span class="go">33vault.com</span>
+        </div>
+      </a>
+      <a class="brand" href="https://www.ebay.de/usr/thunder_sales" rel="noopener">
+        <small>Auf eBay</small>
+        <h2>thunder_<wbr>sales</h2>
+        <div>
+          <p>Unser Shop auf eBay: Sammelkarten, Spielzeug, Technik, Kleidung und Schuhe – Neuware und ausgewählte Gebrauchtartikel. Kauf, Zahlung und Versand laufen über eBay.</p>
+          <span class="go">ebay.de/usr/thunder_sales</span>
+        </div>
+      </a>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <dl>
+        <dt>E-Mail</dt>
+        <dd><a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></dd>
+        <dt>Fragen zu 33vault</dt>
+        <dd><a href="mailto:33vault@pano-commerce.com">33vault@pano-commerce.com</a></dd>
+        <dt>Fragen zu thunder_sales</dt>
+        <dd><a href="mailto:thunder_sales@pano-commerce.com">thunder_sales@pano-commerce.com</a></dd>
+        <dt>Post</dt>
+        <dd>PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth</dd>
+      </dl>
+    </section>
+
+    <section id="impressum" class="legal">
+      <h2>Impressum</h2>
+      <p>Angaben gemäß § 5 DDG</p>
+      <address>
+        <p>PaNo Commerce GbR<br>Emil-Warburg-Weg 24<br>95447 Bayreuth<br>Deutschland</p>
+      </address>
+      <p>Vertreten durch die Gesellschafter Paul Jansen und Noel Zimmermann</p>
+      <p>E-Mail: <a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></p>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE465834689</p>
+      <h3>Verbraucherstreitbeilegung</h3>
+      <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      <h3>Haftung für Links</h3>
+      <p>Diese Seite verlinkt auf unsere Shops bei Shopify (33vault.com) und eBay. Für die Inhalte der verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.</p>
+    </section>
+
+    <section id="datenschutz" class="legal">
+      <h2>Datenschutzerklärung</h2>
+      <h3>Verantwortlicher</h3>
+      <p>PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth, E-Mail: <a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></p>
+      <h3>Was diese Seite tut</h3>
+      <p>Diese Seite ist eine reine Informationsseite. Sie setzt keine Cookies, nutzt keine Analyse- oder Tracking-Dienste, bindet keine externen Schriften oder Skripte ein und enthält keine Formulare.</p>
+      <h3>Hosting und Server-Logfiles</h3>
+      <p>Diese Seite wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub automatisch technisch notwendige Daten: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, übertragene Datenmenge, Browser und Betriebssystem sowie die zuvor besuchte Seite. Diese Daten dienen dem sicheren und stabilen Betrieb der Seite und werden nicht mit anderen Daten zusammengeführt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am Betrieb der Website).</p>
+      <p>Dabei können Daten in die USA übermittelt werden. GitHub ist unter dem EU-US Data Privacy Framework zertifiziert; ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub-Datenschutzerklärung</a>.</p>
+      <h3>Kontakt per E-Mail</h3>
+      <p>Wenn Sie uns per E-Mail schreiben, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b oder lit. f DSGVO). Wir löschen die Nachricht, sobald sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+      <h3>Links zu unseren Shops</h3>
+      <p>Die Links zu 33vault.com und eBay führen auf Seiten anderer Anbieter. Dort gelten deren Datenschutzerklärungen: die von 33vault.com finden Sie direkt im Shop, die von eBay bei eBay.</p>
+      <h3>Ihre Rechte</h3>
+      <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21). Wenden Sie sich dazu an <a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a>.</p>
+      <p>Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
+      <p>Stand: Oktober 2026</p>
+    </section>
+
+    <footer>
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+      <span>© 2026 PaNo Commerce GbR</span>
+    </footer>
+  </div>
+</body>
+</html>
