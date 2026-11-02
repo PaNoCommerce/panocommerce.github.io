@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PaNo Commerce GbR – 33vault &amp; thunder_sales</title>
-  <meta name="description" content="PaNo Commerce GbR aus Bayreuth betreibt die Marken 33vault (kuratierte Second-Hand-Mode) und thunder_sales (eBay). Kontakt, Impressum und Datenschutz.">
+  <meta name="description" content="PaNo Commerce GbR aus Bayreuth: Sammelkarten, Gaming und Limited Editions auf 33vault.com, eBay (thunder_sales) und Kleinanzeigen. Erster Mode-Drop am 27.11. Kontakt, Impressum und Datenschutz.">
   <meta property="og:title" content="PaNo Commerce GbR">
-  <meta property="og:description" content="Die Firma hinter 33vault und thunder_sales.">
+  <meta property="og:description" content="Die Firma hinter 33vault und thunder_sales. Erster Mode-Drop am 27.11.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pano-commerce.com/">
   <meta property="og:locale" content="de_DE">
@@ -33,6 +33,10 @@
     "brand": [
       { "@type": "Brand", "name": "33vault", "url": "https://33vault.com" },
       { "@type": "Brand", "name": "thunder_sales", "url": "https://www.ebay.de/usr/thunder_sales" }
+    ],
+    "sameAs": [
+      "https://www.ebay.de/usr/thunder_sales",
+      "https://www.kleinanzeigen.de/s-bestandsliste.html?userId=167635467"
     ]
   }
   </script>
@@ -200,6 +204,26 @@
       font-size: 13px; transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
     }
     .brand .go::after { content: "↗"; display: inline-block; transition: transform .5s var(--ease); }
+    @media (min-width: 721px) { .brands { grid-template-columns: repeat(2, 1fr); } }
+    .brand h2.long { font-size: clamp(38px, 4.8vw, 62px); }
+    .brand.soon { border-style: dashed; }
+    .brand.soon:hover { transform: none; border-color: var(--line); }
+    .brand.soon:hover h2 { transform: none; }
+    .brand.soon .go::after { content: none; }
+    .brand.soon .go { color: var(--muted); }
+    .brand.soon:hover .go { background: transparent; color: var(--muted); border-color: var(--line); }
+
+    /* Drop-Hinweis */
+    .drop {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+      margin: 0 0 14px; padding: 16px 20px;
+      border: 1px solid var(--accent); border-radius: 14px;
+      background: var(--glow); text-decoration: none;
+      transition: background-color .4s var(--ease);
+    }
+    .drop:hover { background: rgba(255, 107, 94, .26); }
+    .drop strong { font-size: 17px; font-weight: 500; }
+    .drop span { font-size: 14px; color: var(--body); }
     .brand:hover .go, .brand:focus-visible .go { background: var(--ink); color: var(--paper); border-color: var(--ink); }
     .brand:hover .go::after, .brand:focus-visible .go::after { transform: translate(2px, -2px); }
 
@@ -271,6 +295,8 @@
     .js .intro h1 .w { opacity: 0; transform: translateY(.4em); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 60ms); }
     .js .intro.in h1 .w { opacity: 1; transform: none; }
     .js .brands .brand.reveal:nth-child(2) { transition-delay: .12s; }
+    .js .brands .brand.reveal:nth-child(3) { transition-delay: .24s; }
+    .js .brands .brand.reveal:nth-child(4) { transition-delay: .36s; }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -318,15 +344,20 @@
     <section class="intro">
       <p class="eyebrow">Onlinehandel aus Bayreuth</p>
       <h1>Die Firma hinter <em>33vault</em> und <em>thunder_sales</em>.</h1>
-      <p>PaNo Commerce ist ein Onlinehandel aus Bayreuth. Wir verkaufen über zwei Marken: 33vault für kuratierte Second-Hand-Mode in limitierten Drops und thunder_sales auf eBay für Sammelkarten, Spielzeug, Technik, Kleidung und Schuhe.</p>
+      <p>PaNo Commerce ist ein Onlinehandel aus Bayreuth. Aktuell verkaufen wir Sammelkarten, Gaming, Tonies und Limited Editions in unserem Shop 33vault.com, auf eBay als thunder_sales und auf Kleinanzeigen. Bald kommt Mode dazu – der erste Drop startet am 27.11.</p>
     </section>
+
+    <a class="drop reveal" href="https://33vault.com" rel="noopener">
+      <strong>Erster Mode-Drop: 27.11.</strong>
+      <span>Kleidung kommt zu 33vault – alles Weitere auf 33vault.com.</span>
+    </a>
 
     <section id="marken" class="brands" aria-label="Unsere Marken">
       <a class="brand reveal" href="https://33vault.com" rel="noopener">
         <small>Eigener Onlineshop</small>
         <h2>33vault</h2>
         <div>
-          <p>Kuratierte Second-Hand-Mode, veröffentlicht in Drops. Zwischen den Drops ist der Shop geschlossen – wer sich einträgt, erfährt als Erstes vom nächsten.</p>
+          <p>Sammelkarten, Gaming, Tonies und Limited Editions – jetzt im Shop und in der Shop-App. Ab dem 27.11. auch Mode in Drops.</p>
           <span class="go">33vault.com</span>
         </div>
       </a>
@@ -338,6 +369,22 @@
           <span class="go">ebay.de/usr/thunder_sales</span>
         </div>
       </a>
+      <a class="brand reveal" href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=167635467" rel="noopener">
+        <small>Auf Kleinanzeigen</small>
+        <h2 class="long">Klein&shy;anzeigen</h2>
+        <div>
+          <p>Unsere Angebote auch auf Kleinanzeigen – als gewerblicher Anbieter PaNo Commerce.</p>
+          <span class="go">kleinanzeigen.de</span>
+        </div>
+      </a>
+      <div class="brand soon reveal">
+        <small>TikTok Shop</small>
+        <h2 class="long">Lightning Sales</h2>
+        <div>
+          <p>Unser TikTok Shop Lightning Sales ist gerade in Bearbeitung und startet bald.</p>
+          <span class="go">In Vorbereitung</span>
+        </div>
+      </div>
     </section>
 
     <section id="kontakt" class="contact reveal" aria-labelledby="kontakt-titel">
@@ -346,7 +393,7 @@
         <li><span class="label">E-Mail</span><span class="val"><a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></span><button class="copy" type="button" data-copy="general@pano-commerce.com" hidden>Kopieren</button></li>
         <li><span class="label">Fragen zu 33vault</span><span class="val"><a href="mailto:33vault@pano-commerce.com">33vault@pano-commerce.com</a></span><button class="copy" type="button" data-copy="33vault@pano-commerce.com" hidden>Kopieren</button></li>
         <li><span class="label">Fragen zu thunder_sales</span><span class="val"><a href="mailto:thunder_sales@pano-commerce.com">thunder_sales@pano-commerce.com</a></span><button class="copy" type="button" data-copy="thunder_sales@pano-commerce.com" hidden>Kopieren</button></li>
-        <li><span class="label">Post</span><span class="val"><address>PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth</address></span><button class="copy" type="button" data-copy="PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth" hidden>Kopieren</button></li>
+        <li><span class="label">Post</span><span class="val"><address>Paul Jansen, PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth</address></span><button class="copy" type="button" data-copy="Paul Jansen, PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth" hidden>Kopieren</button></li>
       </ul>
     </section>
 
@@ -362,7 +409,7 @@
       <h3>Verbraucherstreitbeilegung</h3>
       <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
       <h3>Haftung für Links</h3>
-      <p>Diese Seite verlinkt auf unsere Shops bei Shopify (33vault.com) und eBay. Für die Inhalte der verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.</p>
+      <p>Diese Seite verlinkt auf unsere Shops bei Shopify (33vault.com), eBay und Kleinanzeigen. Für die Inhalte der verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.</p>
     </section>
 
     <section id="datenschutz" class="legal reveal">
@@ -377,7 +424,7 @@
       <h3>Kontakt per E-Mail</h3>
       <p>Wenn Sie uns per E-Mail schreiben, verarbeiten wir Ihre Angaben zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b oder lit. f DSGVO). Wir löschen die Nachricht, sobald sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
       <h3>Links zu unseren Shops</h3>
-      <p>Die Links zu 33vault.com und eBay führen auf Seiten anderer Anbieter. Dort gelten deren Datenschutzerklärungen: die von 33vault.com finden Sie direkt im Shop, die von eBay bei eBay.</p>
+      <p>Die Links zu 33vault.com, eBay und Kleinanzeigen führen auf Seiten anderer Anbieter. Dort gelten deren Datenschutzerklärungen: die von 33vault.com finden Sie direkt im Shop, die von eBay bei eBay und die von Kleinanzeigen bei Kleinanzeigen.</p>
       <h3>Ihre Rechte</h3>
       <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (Art. 21). Wenden Sie sich dazu an <a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a>.</p>
       <p>Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
