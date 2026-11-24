@@ -12,8 +12,8 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="PaNo Commerce GbR">
   <meta name="twitter:card" content="summary">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b0b0b">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://pano-commerce.com/">
   <script type="application/ld+json">
   {
@@ -44,304 +44,42 @@
   </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-size='17' font-weight='700' fill='%23fff'%3EPN%3C/text%3E%3C/svg%3E">
   <style>
-    :root {
-      --ink: #f2f2f2;
-      --paper: #0a0a0a;
-      --raise: #121212;
-      --muted: rgba(255, 255, 255, .58);
-      --body: rgba(255, 255, 255, .8);
-      --line: rgba(255, 255, 255, .14);
-      --edge: rgba(255, 255, 255, .32);
-      --accent: #ff6b5e;
-      --glow: rgba(255, 107, 94, .16);
-      --ease: cubic-bezier(.22, 1, .36, 1);
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      color-scheme: dark;
-    }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-    [id] { scroll-margin-top: 72px; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font: 400 16px/1.55 var(--font);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: clip;
+      background: #fff;
+      color: #000;
+      font: 400 16px/1.6 Helvetica, Arial, sans-serif;
     }
-    a { color: inherit; }
-    ::selection { background: var(--accent); color: #000; }
-    .wrap { width: min(1040px, 100% - 32px); margin: 0 auto; }
-    .sr-only {
-      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-    }
-    .skip {
-      position: absolute; left: 16px; top: -60px; z-index: 50;
-      padding: 10px 14px; background: var(--ink); color: var(--paper);
-      font-size: 14px; text-decoration: none;
-    }
-    .skip:focus { top: 12px; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-    /* Lesefortschritt */
-    .progress {
-      position: fixed; inset: 0 0 auto 0; height: 2px; z-index: 40;
-      background: var(--accent); transform-origin: 0 50%; transform: scaleX(0);
-    }
-
-    /* Kopf */
-    .top {
-      position: sticky; top: 0; z-index: 30;
-      background: rgba(10, 10, 10, .72);
-      -webkit-backdrop-filter: saturate(140%) blur(14px);
-      backdrop-filter: saturate(140%) blur(14px);
-      border-bottom: 1px solid var(--line);
-    }
-    .top .wrap {
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
-      padding: 16px 0; font-size: 13px; color: var(--muted);
-    }
-    .top strong { color: var(--ink); font-weight: 500; }
-    .clock { font-variant-numeric: tabular-nums; }
-    .top nav { display: flex; gap: 4px; }
-    .top nav a {
-      position: relative; padding: 6px 10px; border-radius: 999px;
-      text-decoration: none; transition: color .3s var(--ease), background-color .3s var(--ease);
-    }
-    .top nav a:hover { color: var(--ink); background: rgba(255, 255, 255, .06); }
-    .top nav a.is-active { color: var(--ink); background: rgba(255, 255, 255, .1); }
-
-    /* Intro */
-    .intro {
-      position: relative;
-      padding: clamp(64px, 12vw, 140px) 0 clamp(44px, 7vw, 80px);
-    }
-    .intro::before {
-      content: ""; position: absolute; inset: -80px calc(50% - 50vw) 0; z-index: -1; pointer-events: none;
-      background: radial-gradient(520px circle at var(--hx, 30%) var(--hy, 40%), var(--glow), transparent 70%);
-      transition: background-position .2s;
-    }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin: 0 0 22px; font-size: 13px; color: var(--muted);
-    }
-    .eyebrow::before {
-      content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
-      box-shadow: 0 0 0 0 var(--accent); animation: pulse 2.4s var(--ease) infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255, 107, 94, .55); }
-      70%, 100% { box-shadow: 0 0 0 9px rgba(255, 107, 94, 0); }
-    }
-    .intro h1 {
-      margin: 0;
-      max-width: 18ch;
-      font-size: clamp(36px, 6.4vw, 76px);
-      font-weight: 500;
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      text-wrap: balance;
-    }
-    .intro h1 .w { display: inline-block; }
-    .intro h1 em {
-      font-style: normal;
-      background: linear-gradient(90deg, var(--ink), var(--accent) 60%, var(--ink));
-      background-size: 200% 100%;
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      animation: shine 6s linear infinite;
-    }
-    @keyframes shine { to { background-position: -200% 0; } }
-    .intro p {
-      max-width: 52ch;
-      margin: 26px 0 0;
-      color: var(--muted);
-      font-size: clamp(16px, 1.6vw, 19px);
-      text-wrap: pretty;
-    }
-
-    /* Marken */
-    .brands {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-    }
-    .brand {
-      --mx: 50%; --my: 50%;
-      position: relative; overflow: hidden; isolation: isolate;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      gap: 28px;
-      min-height: 320px;
-      padding: 26px 26px 24px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--raise);
-      text-decoration: none;
-      transition: border-color .5s var(--ease), transform .5s var(--ease);
-    }
-    .brand::before {
-      content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0;
-      background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255, 107, 94, .22), transparent 65%);
-      transition: opacity .5s var(--ease);
-    }
-    .brand:hover, .brand:focus-visible { border-color: var(--edge); transform: translateY(-3px); }
-    .brand:hover::before, .brand:focus-visible::before { opacity: 1; }
-    .brand small { font-size: 13px; color: var(--muted); }
-    .brand h2 {
-      align-self: start;
-      margin: 0;
-      font-size: clamp(44px, 6.4vw, 80px);
-      font-weight: 500;
-      line-height: .95;
-      letter-spacing: -0.045em;
-      word-break: break-word;
-      transition: transform .6s var(--ease);
-    }
-    .brand:hover h2 { transform: translateX(4px); }
-    .brand p { margin: 0; max-width: 36ch; font-size: 15px; color: var(--body); text-wrap: pretty; }
-    .brand .go {
-      display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
-      padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px;
-      font-size: 13px; transition: background-color .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
-    }
-    .brand .go::after { content: "↗"; display: inline-block; transition: transform .5s var(--ease); }
-    @media (min-width: 721px) { .brands { grid-template-columns: repeat(2, 1fr); } .brands .brand.soon { grid-column: 1 / -1; } }
-    .brand h2.long { font-size: clamp(38px, 4.8vw, 62px); }
-    .brand.soon { border-style: dashed; }
-    .brand.soon:hover { transform: none; border-color: var(--line); }
-    .brand.soon:hover h2 { transform: none; }
-    .brand.soon .go::after { content: none; }
-    .brand.soon .go { color: var(--muted); }
-    .brand.soon:hover .go { background: transparent; color: var(--muted); border-color: var(--line); }
-
-    /* Und sonst */
-    .more {
-      margin: 14px 0 0; padding: 26px 26px 24px;
-      border: 1px solid var(--line); border-radius: 18px;
-      background: var(--raise);
-    }
-    .more h2 { margin: 0 0 12px; font-size: clamp(26px, 3.2vw, 40px); font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; }
-    .more p { margin: 0; max-width: 62ch; font-size: 15px; color: var(--body); text-wrap: pretty; }
-
-    /* Drop-Hinweis */
-    .drop {
-      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
-      margin: 0 0 14px; padding: 16px 20px;
-      border: 1px solid var(--accent); border-radius: 14px;
-      background: var(--glow); text-decoration: none;
-      transition: background-color .4s var(--ease);
-    }
-    .drop:hover { background: rgba(255, 107, 94, .26); }
-    .drop strong { font-size: 17px; font-weight: 500; }
-    .drop span { font-size: 14px; color: var(--body); }
-    .brand:hover .go, .brand:focus-visible .go { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-    .brand:hover .go::after, .brand:focus-visible .go::after { transform: translate(2px, -2px); }
-
-    /* Kontakt */
-    .contact { padding: clamp(48px, 7vw, 88px) 0; }
-    .contact h2 { margin: 0 0 22px; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
-    .contact ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-    .contact li {
-      display: grid; grid-template-columns: 200px 1fr auto; align-items: center; gap: 8px 24px;
-      padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px;
-    }
-    .contact .label { color: var(--muted); }
-    .contact .val { overflow-wrap: anywhere; }
-    .contact .val a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .4s var(--ease); }
-    .contact .val a:hover { background-size: 100% 1px; }
-    .contact address { font-style: normal; }
-    .copy {
-      appearance: none; cursor: pointer;
-      padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
-      background: transparent; color: var(--muted); font: inherit; font-size: 12px;
-      transition: color .3s var(--ease), border-color .3s var(--ease), background-color .3s var(--ease);
-    }
-    .copy:hover { color: var(--ink); border-color: var(--edge); }
-    .copy.done { color: #000; background: var(--accent); border-color: var(--accent); }
-    .copy[hidden] { display: none; }
-
-    /* Rechtliches */
-    .legal { padding: 48px 0 64px; border-top: 1px solid var(--line); }
-    .legal h2 { margin: 0 0 18px; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
-    .legal h3 { margin: 28px 0 8px; font-size: 15px; font-weight: 500; }
-    .legal p, .legal li { max-width: 68ch; margin: 0 0 10px; font-size: 15px; color: var(--body); overflow-wrap: break-word; }
-    .legal a { text-underline-offset: 3px; text-decoration-color: var(--edge); }
-    .legal a:hover { text-decoration-color: var(--accent); }
-    .legal address { font-style: normal; }
-
-    footer { border-top: 1px solid var(--line); }
-    footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding: 22px 0 44px; font-size: 13px; color: var(--muted); }
-    footer a { text-decoration: none; }
-    footer a:hover { color: var(--ink); }
+    a { color: #000; text-underline-offset: 3px; }
+    a:hover { text-decoration: none; }
+    :focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 32px 0 0; }
+    header .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; }
+    header nav { display: flex; flex-wrap: wrap; gap: 16px; }
+    h1 { margin: 72px 0 16px; font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+    h2 { margin: 0 0 16px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    h3 { margin: 24px 0 4px; font-size: 16px; font-weight: 700; }
+    p { margin: 0 0 12px; }
+    section { padding: 48px 0 0; }
+    hr { border: 0; border-top: 1px solid #000; margin: 48px 0 0; }
+    ul.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #000; }
+    ul.list li { padding: 14px 0; border-bottom: 1px solid #000; }
+    ul.list strong { display: block; }
+    ul.list span { display: block; }
+    address { font-style: normal; }
+    footer { padding: 48px 0 40px; font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; }
     footer span { margin-right: auto; }
-
-    /* Nach oben */
-    .totop {
-      position: fixed; right: 16px; bottom: 16px; z-index: 30;
-      width: 44px; height: 44px; border-radius: 50%;
-      display: grid; place-items: center;
-      border: 1px solid var(--edge); background: rgba(18, 18, 18, .85); color: var(--ink);
-      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-      font-size: 18px; text-decoration: none;
-      opacity: 0; transform: translateY(12px); pointer-events: none;
-      transition: opacity .4s var(--ease), transform .4s var(--ease), background-color .3s;
-    }
-    .totop.show { opacity: 1; transform: none; pointer-events: auto; }
-    .totop:hover { background: var(--ink); color: var(--paper); }
-
-    /* Hinweis */
-    .toast {
-      position: fixed; left: 50%; bottom: 24px; z-index: 45;
-      padding: 10px 16px; border-radius: 999px;
-      background: var(--ink); color: var(--paper); font-size: 14px;
-      transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
-      transition: opacity .35s var(--ease), transform .35s var(--ease);
-    }
-    .toast.show { opacity: 1; transform: translate(-50%, 0); }
-
-    /* Einblenden beim Scrollen (nur mit JavaScript) */
-    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-    .js .reveal.in { opacity: 1; transform: none; }
-    .js .intro h1 .w { opacity: 0; transform: translateY(.4em); transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: calc(var(--i) * 60ms); }
-    .js .intro.in h1 .w { opacity: 1; transform: none; }
-    .js .brands .brand.reveal:nth-child(2) { transition-delay: .12s; }
-    .js .brands .brand.reveal:nth-child(3) { transition-delay: .24s; }
-    .js .brands .brand.reveal:nth-child(4) { transition-delay: .36s; }
-    .js .brands .brand.reveal:nth-child(5) { transition-delay: .48s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .js .reveal, .js .intro h1 .w { opacity: 1; transform: none; }
-    }
-    @media (max-width: 720px) {
-      .top .wrap { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 0; }
-      .top nav { margin-left: -10px; flex-wrap: wrap; }
-      [id] { scroll-margin-top: 112px; }
-      .brand { min-height: 260px; padding: 22px 20px 20px; }
-      .contact li { grid-template-columns: 1fr auto; }
-      .contact .label { grid-column: 1 / -1; }
-    }
-    @media print {
-      :root { --ink: #000; --paper: #fff; --raise: #fff; --muted: #555; --body: #222; --line: #ccc; }
-      .top, .skip, .totop, .toast, .progress, .copy, footer a { display: none !important; }
-      .js .reveal, .js .intro h1 .w { opacity: 1; transform: none; }
-      .intro::before, .brand::before { display: none; }
-      .intro h1 em { color: #000; background: none; }
-      .brand { min-height: 0; break-inside: avoid; }
-      .legal { break-before: page; }
-    }
+    @media print { header nav, footer a { display: none; } }
   </style>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js');</script>
-  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-  <div class="progress" aria-hidden="true"></div>
-
-  <header class="top">
+  <header>
     <div class="wrap">
-      <div><strong>PaNo Commerce GbR</strong> &nbsp;Bayreuth <span class="clock" aria-hidden="true"></span></div>
+      <strong>PaNo Commerce GbR</strong>
       <nav aria-label="Seite">
         <a href="#marken">Marken</a>
         <a href="#kontakt">Kontakt</a>
@@ -351,79 +89,37 @@
     </div>
   </header>
 
-  <div class="wrap">
-    <main id="inhalt">
-    <section class="intro">
-      <p class="eyebrow">Onlinehandel aus Bayreuth</p>
-      <h1>Die Firma hinter <em>33vault</em>, <em>thunder_sales</em> und <em>storm_sales</em>.</h1>
-      <p>PaNo Commerce ist ein Onlinehandel aus Bayreuth. In unserem Shop 33vault.com gibt es Vintage- und Second-Hand-Kleidung, die gerade angesagt ist – in Drops. Auf eBay als thunder_sales, auf Kaufland als storm_sales und auf Kleinanzeigen verkaufen wir alles andere: von Technik bis Sammelkarten.</p>
+  <main class="wrap">
+    <h1>Die Firma hinter 33vault, thunder_sales und storm_sales.</h1>
+    <p>PaNo Commerce ist ein Onlinehandel aus Bayreuth. In unserem Shop 33vault.com gibt es Vintage- und Second-Hand-Kleidung, die gerade angesagt ist – in Drops. Auf eBay als thunder_sales, auf Kaufland als storm_sales und auf Kleinanzeigen verkaufen wir alles andere: von Technik bis Sammelkarten.</p>
+    <p><strong>Drop 01 · Kleidung: 27.11., 18 Uhr</strong> auf <a href="https://33vault.com" rel="noopener">33vault.com</a>.</p>
+
+    <section id="marken" aria-labelledby="marken-titel">
+      <h2 id="marken-titel">Marken</h2>
+      <ul class="list">
+        <li><strong><a href="https://33vault.com" rel="noopener">33vault</a></strong><span>Eigener Onlineshop, nur Kleidung. Vintage- und Second-Hand-Kleidung in Drops. Zwischen den Drops ist der Shop geschlossen – Drop 01 startet am 27.11. um 18 Uhr.</span></li>
+        <li><strong><a href="https://www.ebay.de/usr/thunder_sales" rel="noopener">thunder_sales</a></strong><span>Auf eBay: Sammelkarten, Spielzeug, Technik, Kleidung und Schuhe – Neuware und ausgewählte Gebrauchtartikel. Kauf, Zahlung und Versand laufen über eBay.</span></li>
+        <li><strong><a href="https://www.kaufland.de/shops/storm_sales/" rel="noopener">storm_sales</a></strong><span>Auf Kaufland: Sammelkarten, Spielzeug, Gaming und Beauty – originalverpackte Neuware. Kauf, Zahlung und Versand laufen über Kaufland.</span></li>
+        <li><strong><a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=167635467" rel="noopener">Kleinanzeigen</a></strong><span>Unsere Angebote auch auf Kleinanzeigen – als gewerblicher Anbieter PaNo Commerce.</span></li>
+        <li><strong>Lightning Sales</strong><span>Unser TikTok Shop ist gerade in Bearbeitung und startet bald.</span></li>
+      </ul>
+      <p style="margin-top:16px">Neben den Drops auf 33vault verkaufen wir auf eBay, Kaufland und Kleinanzeigen Technik, Gaming, Sammelkarten, Spielzeug, Beauty und eigentlich alles, was gerade gefragt ist. Neu, originalverpackt und schnell verschickt aus Bayreuth.</p>
     </section>
 
-    <a class="drop reveal" href="https://33vault.com" rel="noopener">
-      <strong>Drop 01 · Kleidung: 27.11., 18 Uhr</strong>
-      <span>Angesagte Vintage- und Second-Hand-Mode auf 33vault.com.</span>
-    </a>
-
-    <section id="marken" class="brands" aria-label="Unsere Marken">
-      <a class="brand reveal" href="https://33vault.com" rel="noopener">
-        <small>Eigener Onlineshop · nur Kleidung</small>
-        <h2>33vault</h2>
-        <div>
-          <p>Vintage- und Second-Hand-Kleidung, die gerade angesagt ist – in Drops. Zwischen den Drops ist der Shop geschlossen – Drop 01 startet am 27.11. um 18 Uhr.</p>
-          <span class="go">33vault.com</span>
-        </div>
-      </a>
-      <a class="brand reveal" href="https://www.ebay.de/usr/thunder_sales" rel="noopener">
-        <small>Auf eBay</small>
-        <h2>thunder_<wbr>sales</h2>
-        <div>
-          <p>Unser Shop auf eBay: Sammelkarten, Spielzeug, Technik, Kleidung und Schuhe – Neuware und ausgewählte Gebrauchtartikel. Kauf, Zahlung und Versand laufen über eBay.</p>
-          <span class="go">ebay.de/usr/thunder_sales</span>
-        </div>
-      </a>
-      <a class="brand reveal" href="https://www.kaufland.de/shops/storm_sales/" rel="noopener">
-        <small>Auf Kaufland</small>
-        <h2>storm_<wbr>sales</h2>
-        <div>
-          <p>Unser Shop auf Kaufland: Sammelkarten, Spielzeug, Gaming und Beauty – originalverpackte Neuware. Kauf, Zahlung und Versand laufen über Kaufland.</p>
-          <span class="go">kaufland.de/shops/storm_sales</span>
-        </div>
-      </a>
-      <a class="brand reveal" href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=167635467" rel="noopener">
-        <small>Auf Kleinanzeigen</small>
-        <h2 class="long">Klein&shy;anzeigen</h2>
-        <div>
-          <p>Unsere Angebote auch auf Kleinanzeigen – als gewerblicher Anbieter PaNo Commerce.</p>
-          <span class="go">kleinanzeigen.de</span>
-        </div>
-      </a>
-      <div class="brand soon reveal">
-        <small>TikTok Shop</small>
-        <h2 class="long">Lightning Sales</h2>
-        <div>
-          <p>Unser TikTok Shop Lightning Sales ist gerade in Bearbeitung und startet bald.</p>
-          <span class="go">In Vorbereitung</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="more reveal" aria-labelledby="mehr-titel">
-      <h2 id="mehr-titel">Und sonst? Eigentlich alles.</h2>
-      <p>Neben den Drops auf 33vault verkaufen wir auf eBay, Kaufland und Kleinanzeigen Technik, Gaming, Sammelkarten, Spielzeug, Beauty und eigentlich alles, was gerade gefragt ist. Wir sind immer bei den heißesten Artikeln der Saison dabei – und haben dazu bewährte Dauerläufer, die einfach immer gehen. Neu, originalverpackt und schnell verschickt aus Bayreuth.</p>
-    </section>
-
-    <section id="kontakt" class="contact reveal" aria-labelledby="kontakt-titel">
+    <section id="kontakt" aria-labelledby="kontakt-titel">
       <h2 id="kontakt-titel">Kontakt</h2>
-      <ul>
-        <li><span class="label">E-Mail</span><span class="val"><a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></span><button class="copy" type="button" data-copy="general@pano-commerce.com" hidden>Kopieren</button></li>
-        <li><span class="label">Fragen zu 33vault</span><span class="val"><a href="mailto:33vault@pano-commerce.com">33vault@pano-commerce.com</a></span><button class="copy" type="button" data-copy="33vault@pano-commerce.com" hidden>Kopieren</button></li>
-        <li><span class="label">Fragen zu thunder_sales</span><span class="val"><a href="mailto:thunder_sales@pano-commerce.com">thunder_sales@pano-commerce.com</a></span><button class="copy" type="button" data-copy="thunder_sales@pano-commerce.com" hidden>Kopieren</button></li>
-        <li><span class="label">Fragen zu storm_sales</span><span class="val"><a href="mailto:storm_sales@pano-commerce.com">storm_sales@pano-commerce.com</a></span><button class="copy" type="button" data-copy="storm_sales@pano-commerce.com" hidden>Kopieren</button></li>
-        <li><span class="label">Post</span><span class="val"><address>Paul Jansen, PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth</address></span><button class="copy" type="button" data-copy="Paul Jansen, PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth" hidden>Kopieren</button></li>
+      <ul class="list">
+        <li><strong>E-Mail</strong><span><a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></span></li>
+        <li><strong>Fragen zu 33vault</strong><span><a href="mailto:33vault@pano-commerce.com">33vault@pano-commerce.com</a></span></li>
+        <li><strong>Fragen zu thunder_sales</strong><span><a href="mailto:thunder_sales@pano-commerce.com">thunder_sales@pano-commerce.com</a></span></li>
+        <li><strong>Fragen zu storm_sales</strong><span><a href="mailto:storm_sales@pano-commerce.com">storm_sales@pano-commerce.com</a></span></li>
+        <li><strong>Post</strong><span><address>Paul Jansen, PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth</address></span></li>
       </ul>
     </section>
 
-    <section id="impressum" class="legal reveal">
+    <hr>
+
+    <section id="impressum">
       <h2>Impressum</h2>
       <p>Angaben gemäß § 5 DDG</p>
       <address>
@@ -438,7 +134,7 @@
       <p>Diese Seite verlinkt auf unsere Shops bei Shopify (33vault.com), eBay, Kaufland und Kleinanzeigen. Für die Inhalte der verlinkten Seiten sind die jeweiligen Anbieter verantwortlich.</p>
     </section>
 
-    <section id="datenschutz" class="legal reveal">
+    <section id="datenschutz">
       <h2>Datenschutzerklärung</h2>
       <h3>Verantwortlicher</h3>
       <p>PaNo Commerce GbR, Emil-Warburg-Weg 24, 95447 Bayreuth, E-Mail: <a href="mailto:general@pano-commerce.com">general@pano-commerce.com</a></p>
@@ -456,8 +152,7 @@
       <p>Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel beim Bayerischen Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
       <p>Stand: Oktober 2026</p>
     </section>
-    </main>
-  </div>
+  </main>
 
   <footer>
     <div class="wrap">
@@ -466,115 +161,5 @@
       <a href="#datenschutz">Datenschutz</a>
     </div>
   </footer>
-
-  <a class="totop" href="#inhalt" aria-label="Nach oben">↑</a>
-  <div class="toast" role="status" aria-live="polite"></div>
-
-  <script>
-  (function () {
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var finePointer = window.matchMedia('(pointer: fine)').matches;
-
-    // Überschrift Wort für Wort einblenden
-    var h1 = document.querySelector('.intro h1');
-    var i = 0;
-    (function split(node) {
-      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
-        if (n.nodeType === 3) {
-          var frag = document.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach(function (part) {
-            if (!part) return;
-            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-            var s = document.createElement('span');
-            s.className = 'w'; s.style.setProperty('--i', i++); s.textContent = part;
-            frag.appendChild(s);
-          });
-          n.parentNode.replaceChild(frag, n);
-        } else if (n.nodeType === 1 && n.tagName === 'EM') {
-          n.classList.add('w'); n.style.setProperty('--i', i++);
-        } else if (n.nodeType === 1) { split(n); }
-      });
-    })(h1);
-    requestAnimationFrame(function () { document.querySelector('.intro').classList.add('in'); });
-
-    // Abschnitte beim Scrollen einblenden
-    var reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -8% 0px' });
-      reveals.forEach(function (el) { io.observe(el); });
-    } else {
-      reveals.forEach(function (el) { el.classList.add('in'); });
-    }
-
-    // Lichtkegel folgt der Maus
-    if (finePointer && !reduce) {
-      document.querySelectorAll('.brand').forEach(function (card) {
-        card.addEventListener('pointermove', function (e) {
-          var r = card.getBoundingClientRect();
-          card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-          card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-        });
-      });
-      var intro = document.querySelector('.intro');
-      intro.addEventListener('pointermove', function (e) {
-        var r = intro.getBoundingClientRect();
-        intro.style.setProperty('--hx', (e.clientX - r.left) + 'px');
-        intro.style.setProperty('--hy', (e.clientY - r.top + 80) + 'px');
-      });
-    }
-
-    // Fortschritt, aktiver Menüpunkt, Nach-oben-Knopf
-    var bar = document.querySelector('.progress');
-    var totop = document.querySelector('.totop');
-    var links = document.querySelectorAll('.top nav a');
-    var sections = Array.prototype.map.call(links, function (a) { return document.querySelector(a.getAttribute('href')); });
-    var ticking = false;
-    function onScroll() {
-      var max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
-      totop.classList.toggle('show', scrollY > innerHeight * .8);
-      var current = -1;
-      sections.forEach(function (s, idx) { if (s && s.getBoundingClientRect().top < innerHeight * .4) current = idx; });
-      links.forEach(function (a, idx) {
-        a.classList.toggle('is-active', idx === current);
-        if (idx === current) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
-      });
-      ticking = false;
-    }
-    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-    addEventListener('resize', onScroll);
-    onScroll();
-
-    // Kopieren-Knöpfe
-    var toast = document.querySelector('.toast'), toastTimer;
-    function say(msg) {
-      toast.textContent = msg; toast.classList.add('show');
-      clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 1800);
-    }
-    if (navigator.clipboard && window.isSecureContext) {
-      document.querySelectorAll('.copy').forEach(function (btn) {
-        btn.hidden = false;
-        btn.setAttribute('aria-label', 'Kopieren: ' + btn.dataset.copy);
-        btn.addEventListener('click', function () {
-          navigator.clipboard.writeText(btn.dataset.copy).then(function () {
-            btn.textContent = 'Kopiert'; btn.classList.add('done'); say('In die Zwischenablage kopiert');
-            setTimeout(function () { btn.textContent = 'Kopieren'; btn.classList.remove('done'); }, 1800);
-          }, function () { say('Kopieren hat nicht geklappt'); });
-        });
-      });
-    }
-
-    // Uhrzeit in Bayreuth
-    var clock = document.querySelector('.clock');
-    function tick() {
-      try {
-        clock.textContent = '· ' + new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Berlin' });
-      } catch (e) {}
-    }
-    tick(); setInterval(tick, 15000);
-  })();
-  </script>
 </body>
 </html>
